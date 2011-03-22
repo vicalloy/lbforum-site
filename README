@@ -1,0 +1,35 @@
+What is LBForum Site
+===============
+
+Demo Project for LBForum.
+https://github.com/vicalloy/LBForum
+
+LBForum is a quick and simple forum which uses the Django Framework (written 
+in Python language). LBForum is distributed under the BSD license. 
+
+http://vik.haoluobo.com/lbforum/
+
+
+How to install LBForum Site
+======================
+
+run on django dev server
+------------------------
+
+* Clone LBForum repository from http://github.com/vicalloy/LBForum
+* use \scripts\create_env.py to create lbforum  environment(create python virtualenv, install/unzip requirements libs)
+* use \scripts\env.bat to start lbforum environment.
+* %mg% syncdb
+
+  - Would you like to create one now? (yes/no):**no**
+* %mg% migrate attachments
+* %mg% migrate
+* %mg% createsuperuser
+* %mg% runserver
+* LBForum Admin http://127.0.0.1:8000/admin/
+* LBForum http://127.0.0.1:8000/
+
+plug into exist django project
+------------------------------
+
+TODO ...

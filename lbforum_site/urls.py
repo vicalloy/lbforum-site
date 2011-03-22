@@ -8,7 +8,7 @@ from lbforum.accountviews import profile
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^static/(.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+    (r'^media/(.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     url(r'^accounts/register/$',
         register,
         { 'backend': 'lbregistration.backends.simple.SimpleBackend' },
