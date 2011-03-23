@@ -15,10 +15,6 @@ pip = os.path.join(env, "Scripts/pip.exe")
 if os.name == 'posix':
     pip = os.path.join(env, "bin/pip")
 
-python = os.path.join(env, "Scripts/python.exe")
-if os.name == 'posix':
-    python = os.path.join(env, "bin/python")
-
 def do_unzip():
     print '== do_unzip =='
     req_zip_folder = os.path.join(req_folder, "zip/")
