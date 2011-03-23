@@ -37,7 +37,7 @@ def copy_app_media():
 def do_pip():
     print '== do_pip =='
     requirements = os.path.join(req_folder, 'requirements.txt')
-    run([pip, 'install', '-r', requirements])
+    run("%s install -r %s" % (pip, requirements))
 
 if __name__ == '__main__':
     do_unzip()
