@@ -187,7 +187,7 @@ DEBUG_TOOLBAR_PANELS = (
 
 #TODO add a config model
 try:
-    from lbforum_settings import *
+    from local_settings import *
     CTX_CONFIG.update(CTX_CONFIG_)
 except Exception, e:
     pass
