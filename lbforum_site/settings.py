@@ -103,15 +103,16 @@ INSTALLED_APPS = (
     'pagination',
     #'sorl.thumbnail',
     #'debug_toolbar',
-    #'registration',    
+    'registration',    
     'south',
 
+    'lbforum',
     'simpleavatar',
     'djangohelper',
     'onlineuser',
-    'lbregistration',
-    'lbforum',
     'attachments',
+
+    'lbregistration',
 )
 
 LBFORUM_MEDIA_PREFIX = '%slbforum/' % MEDIA_URL
