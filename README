@@ -18,7 +18,7 @@ run on django dev server
 
 * Clone LBForum repository from git://github.com/vicalloy/lbforum-site.git
 * use \scripts\create_env.py to create lbforum  environment(create python virtualenv, install/unzip requirements libs)
-* use \scripts\env.bat(env.sh) to start lbforum environment.
+* use \scripts\env.bat(source env.rc) to start lbforum environment.
 * %mg% syncdb --noinput --migrate
 * %mg% loaddata demo_data.json
 * %mg% runserver
