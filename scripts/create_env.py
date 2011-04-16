@@ -31,7 +31,7 @@ def do_unzip():
 
 def import_new_env():
     import sys
-    site_pkg = os.path.join(env, 'Lib/site-packages')
+    site_pkg = os.path.join(env, 'lib/site-packages')
     sys.path.insert(0, site_pkg)
 
 def copy_app_media():
