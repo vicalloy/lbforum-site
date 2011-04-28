@@ -4,6 +4,6 @@
 
 {% block main_head %}{% trans 'Registration Closed' %}{% endblock %}
 
-{% block redirect_url %} {% url account_index %} {% endblock %}
+{% block redirect_url %} {{ LOGIN_URL }} {% endblock %}
 
-{% block redirect_url_ %} {% url account_index %} {% endblock %}
+{% block redirect_url_ %} {{ LOGIN_URL }} {% endblock %}
