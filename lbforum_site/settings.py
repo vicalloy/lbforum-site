@@ -4,6 +4,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+SETTINGS = ''#v2ex_settings
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -58,9 +59,9 @@ SECRET_KEY = 'm_wh2yga#6hp#6b3(f1)r90#%je9ikx4t5%$igdy+a#oy9y$q6'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -131,6 +132,7 @@ LOGIN_REDIRECT_URL = ROOT_URL
 LOGIN_URL = "%saccounts/login/" % ROOT_URL
 LOGOUT_URL = "%saccounts/logout/" % ROOT_URL
 REGISTER_URL = '%saccounts/register/' % ROOT_URL#registration_register
+CHANGE_PSWD_URL = '%saccounts/password/change/' % ROOT_URL#registration_register
 
 CTX_CONFIG = {
         'LBFORUM_TITLE': 'LBForum',
@@ -143,6 +145,7 @@ CTX_CONFIG = {
         'LOGIN_URL': LOGIN_URL,
         'LOGOUT_URL': LOGOUT_URL,
         'REGISTER_URL': REGISTER_URL,
+        'CHANGE_PSWD_URL': CHANGE_PSWD_URL,
         }
 
 BBCODE_AUTO_URLS = True
