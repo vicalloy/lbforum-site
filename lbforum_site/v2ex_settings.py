@@ -3,6 +3,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 from settings import *
 
+LBF_STICKY_TOPIC_POST = True
+LBF_LAST_TOPIC_NO_INDEX = True
+
 import lbforum
 V2EX_TEMPLATE_DIR = os.path.join(lbforum.__path__[0], 'templates_v2ex')
 
