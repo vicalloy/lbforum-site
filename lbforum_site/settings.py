@@ -49,10 +49,35 @@ MEDIA_ROOT = os.path.join(HERE, 'media/')
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/media/'
 
+# Absolute path to the directory static files should be collected to.
+# Don't put anything in this directory yourself; store your static files
+# in apps' "static/" subdirectories and in STATICFILES_DIRS.
+# Example: "/home/media/media.lawrence.com/static/"
+STATIC_ROOT = os.path.join(HERE, 'static/')
+
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
+STATIC_URL = '/static/'
+
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/admin_media/'
+
+# Additional locations of static files
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
+
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+)
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'm_wh2yga#6hp#6b3(f1)r90#%je9ikx4t5%$igdy+a#oy9y$q6'
@@ -81,7 +106,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
         "django.core.context_processors.debug",
         "django.core.context_processors.i18n",
         "django.core.context_processors.media",
+        "django.core.context_processors.static",
         "django.core.context_processors.request",
+        "django.contrib.messages.context_processors.messages",
 
         "djangohelper.context_processors.ctx_config",
 )
@@ -107,8 +134,9 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.admin',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
 
     'pagination',
     #'sorl.thumbnail',
@@ -125,9 +153,26 @@ INSTALLED_APPS = (
     'lbregistration',
 )
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    }
+}
+
 AUTO_GENERATE_AVATAR_SIZES = (80, 48, )
 
-LBFORUM_MEDIA_PREFIX = '%slbforum/' % MEDIA_URL
 
 ROOT_URL = '/'
 LOGIN_REDIRECT_URL = ROOT_URL
@@ -143,7 +188,6 @@ CTX_CONFIG = {
         'TOPIC_PAGE_SIZE': 20,
 
         #URLS....
-        'LBFORUM_MEDIA_PREFIX': LBFORUM_MEDIA_PREFIX,
         'LOGIN_URL': LOGIN_URL,
         'LOGOUT_URL': LOGOUT_URL,
         'REGISTER_URL': REGISTER_URL,

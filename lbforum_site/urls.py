@@ -8,7 +8,6 @@ from lbforum.accountviews import profile
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^media/(.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     url(r'^accounts/register/$',
         register,
         { 'backend': 'lbregistration.backends.simple.SimpleBackend' },
@@ -26,3 +25,9 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
 )
+
+from django.conf.urls.static import static
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+urlpatterns += staticfiles_urlpatterns()
