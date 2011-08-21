@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 import os
-import shutil
 
 from helper import run, unzip
 
@@ -29,20 +28,6 @@ def do_unzip():
     req_zip_folder = os.path.join(req_folder, "zip/")
     unzip(os.path.join(req_zip_folder, "registration.zip"), req_folder)
 
-def import_new_env():
-    import sys
-    site_pkg = os.path.join(env, 'lib/site-packages')
-    sys.path.insert(0, site_pkg)
-
-def copy_app_media():
-    import lbforum
-    src_dir = os.path.join(lbforum.__path__[0], 'media')
-    obj_dir = os.path.join(media_folder, 'lbforum')
-    try:
-        shutil.copytree(src_dir, obj_dir)
-    except:
-        print "== lbforum media skiped =="
-
 def do_pip():
     print '== do_pip =='
     requirements = os.path.join(req_folder, 'requirements.txt')
@@ -55,5 +40,3 @@ if __name__ == '__main__':
     if not os.path.exists(env): 
         run('%s %s %s' % (python, virtualenv_py, env))
     do_pip()
-    import_new_env()
-    copy_app_media()
