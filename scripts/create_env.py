@@ -24,9 +24,7 @@ except:
 
 
 def do_unzip():
-    print '== do_unzip =='
-    req_zip_folder = os.path.join(req_folder, "zip/")
-    unzip(os.path.join(req_zip_folder, "registration.zip"), req_folder)
+    pass
 
 def do_pip():
     print '== do_pip =='
