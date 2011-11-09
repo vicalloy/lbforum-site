@@ -70,6 +70,12 @@
                                     <span class="fld-input">{{ form.email}}</span>
                                 </div>
                             </div>
+                            <div class="sf-set set4">
+                                <div class="sf-box text required">
+                                    <label for="fld3"><span>{% trans "captcha" %}:<em>({% trans "Required" %})</em></span> <small></small></label><br>
+                                    <span class="fld-input">{{ form.captcha}}</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="frm-buttons">
                             <span class="submit"><input type="submit" value="{% trans "Register" %}" name="register"></span>

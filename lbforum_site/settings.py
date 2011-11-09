@@ -144,6 +144,7 @@ INSTALLED_APPS = (
     #'debug_toolbar',
     'registration',    
     'south',
+    'captcha',
 
     'lbforum',
     'simpleavatar',
