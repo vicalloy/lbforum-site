@@ -18,10 +18,10 @@ TEMPLATE_DIRS = (
 try:
     from local_settings import *
     CTX_CONFIG.update(CTX_CONFIG_)
-except Exception, e:
+except ImportError, e:
     pass
 try:
     from v2ex_local_settings import *
     CTX_CONFIG.update(CTX_CONFIG_)
-except Exception, e:
+except ImportError, e:
     pass

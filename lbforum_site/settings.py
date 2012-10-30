@@ -229,5 +229,5 @@ acceptable_attributes = ['abbr', 'accept', 'accept-charset', 'accesskey',
 try:
     from local_settings import *
     CTX_CONFIG.update(CTX_CONFIG_)
-except Exception, e:
+except ImportError, e:
     pass
