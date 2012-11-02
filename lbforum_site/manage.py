@@ -5,11 +5,9 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '../src'))
 sys.path.insert(0, os.path.join(HERE, '../requirements'))
-"""
 sys.path.insert(0, os.path.join(HERE, '../../LBForum'))
 sys.path.insert(0, os.path.join(HERE, '../../django-onlineuser'))
 sys.path.insert(0, os.path.join(HERE, '../../django-simple-avatar'))
-"""
 from django.core.management import execute_manager
 try:
     import settings # Assumed to be in the same directory.
