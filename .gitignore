@@ -1,6 +1,9 @@
 *.pyc
 *.swp
-*.sqlite
+*.sqlite3
 fabsettings.py
 env/
 ref/
+bower_components/
+media/
+collectedstatic/

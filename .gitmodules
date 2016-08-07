@@ -1,0 +1,9 @@
+[submodule "vendor/django-lbattachment"]
+	path = vendor/django-lbattachment
+	url = https://github.com/vicalloy/django-lbattachment.git
+[submodule "vendor/lbforum"]
+	path = vendor/lbforum
+	url = https://github.com/vicalloy/LBForum.git
+[submodule "vendor/lbutils"]
+	path = vendor/lbutils
+	url = https://github.com/vicalloy/lbutils

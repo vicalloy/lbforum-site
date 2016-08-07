@@ -1,34 +1,28 @@
-from django.conf.urls.defaults import *
+"""lbforum_site URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/1.10/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.conf.urls import url, include
+    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+"""
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
-
-from registration.views import register
-from lbforum.accountviews import profile
-
-admin.autodiscover()
-
-urlpatterns = patterns('',
-    url(r'^accounts/register/$',
-        register,
-        { 'backend': 'lbregistration.backends.simple.SimpleBackend' },
-        name='registration_register'),   
-    url(r'^user/(?P<user_id>\d+)/$', profile, name='user_profile'),
-    #(r'^accounts/avatar/', include('simpleavatar.urls')),
-    (r'^accounts/', include('registration.backends.default.urls')),
-    (r'^attachments/', include('attachments.urls')),
-    url(r'^captcha/', include('captcha.urls')),
-    (r'^', include('lbforum.urls')),
-
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),
-)
-
 from django.conf.urls.static import static
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-urlpatterns += staticfiles_urlpatterns()
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^attachments/', include('lbattachment.urls')),
+    url(r'^', include('lbforum.urls')),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL_, document_root=settings.MEDIA_ROOT)
