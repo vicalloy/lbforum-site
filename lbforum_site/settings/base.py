@@ -14,6 +14,7 @@ import os
 import sys
 
 from django.conf.global_settings import STATICFILES_FINDERS
+from django.conf.global_settings import AUTHENTICATION_BACKENDS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -47,12 +48,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    'lbforum_site',
 
     'el_pagination',
     'easy_thumbnails',
     'constance',
     'constance.backends.database',
     'djangobower',
+    'allauth',
+    'allauth.account',
 
     'lbforum',
     'lbattachment',
@@ -167,3 +173,15 @@ BOWER_INSTALLED_APPS = (
 )
 
 STATICFILES_FINDERS += (('djangobower.finders.BowerFinder'),)
+AUTHENTICATION_BACKENDS += (('allauth.account.auth_backends.AuthenticationBackend'),)
+
+SITE_ID = 1
+
+ACCOUNT_FORMS = {'signup': 'lbforum_site.forms.SignupForm'}
+ACCOUNT_LOGOUT_ON_GET = True
+
+SIGNUP_URL = '/accounts/signup/'
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = '/accounts/logout/'
+LOGIN_REDIRECT_URL = '/'
+CHANGE_PASSWORD_URL = '/accounts/password/change/'

@@ -20,8 +20,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^attachments/', include('lbattachment.urls')),
     url(r'^', include('lbforum.urls')),
+    url(r'^accounts/', include('allauth.urls')),
+    url(r'^attachments/', include('lbattachment.urls')),
 ]
 
 if settings.DEBUG:
