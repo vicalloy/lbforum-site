@@ -8,3 +8,4 @@ django-constance==1.2
 django_picklefield==0.3.2
 django-bower==5.1.0
 django-allauth==0.26.1
+django-simple-captcha==0.5.2

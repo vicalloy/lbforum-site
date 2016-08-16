@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'djangobower',
     'allauth',
     'allauth.account',
+    'captcha',
 
     'lbforum',
     'lbattachment',

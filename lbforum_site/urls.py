@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^', include('lbforum.urls')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^attachments/', include('lbattachment.urls')),
+    url(r'^captcha/', include('captcha.urls')),
 ]
 
 if settings.DEBUG:
