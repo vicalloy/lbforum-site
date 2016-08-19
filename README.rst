@@ -7,7 +7,7 @@ https://github.com/vicalloy/LBForum
 LBForum is a quick and simple forum which uses the Django Framework (written
 in Python language). LBForum is distributed under the BSD license.
 
-http://vik.haoluobo.com/lbforum/
+http://lbf.haoluobo.com/
 
 
 How to install LBForum Site
