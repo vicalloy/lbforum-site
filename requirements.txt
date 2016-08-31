@@ -10,3 +10,4 @@ django-bower==5.1.0
 django-allauth==0.26.1
 django-simple-captcha==0.5.2
 djangorestframework==3.4.6
+django-debug-toolbar==1.5
