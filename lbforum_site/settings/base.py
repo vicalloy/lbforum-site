@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'captcha',
+    'rest_framework',
 
     'lbforum',
     'lbattachment',
