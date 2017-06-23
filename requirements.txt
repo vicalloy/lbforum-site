@@ -1,6 +1,6 @@
 Django==1.10
 django-el-pagination==3.0.1
-easy_thumbnails==2.3
+easy_thumbnails==2.4.1
 postmarkup==1.2.2
 beautifulsoup4==4.5.1
 python-dateutil==2.5.3
@@ -10,4 +10,4 @@ django-bower==5.1.0
 django-allauth==0.26.1
 django-simple-captcha==0.5.2
 djangorestframework==3.4.6
-django-debug-toolbar==1.5
+django-debug-toolbar==1.8
