@@ -6,7 +6,7 @@ beautifulsoup4==4.5.1
 python-dateutil==2.5.3
 django-constance==1.2
 django_picklefield==0.3.2
-django-bower==5.1.0
+django-bower==5.2.0
 django-allauth==0.26.1
 django-simple-captcha==0.5.2
 djangorestframework==3.4.6
